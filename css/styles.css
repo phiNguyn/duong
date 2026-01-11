@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  position: relative;
+  background-image: url("../images/z7416356776704_0a1bd1d5ea821e3b3beceb6d34a320b5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 60px 30px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark overlay on background image */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Ensure header content is above overlay */
+header h1,
+header p,
+header .school-name {
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header p {
+  margin: 0 0 15px 0;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+header .school-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Navigation Styles */
+nav {
+  background: #133c7a;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Section Styles */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  color: #1a4fa3;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro p {
+  text-align: justify;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+}
+
+/* Clubs Styles */
+.clubs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.club-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.club {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.club:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Phần hình ảnh ở trên */
+.club::before {
+  content: "";
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.club:hover::before {
+  transform: scale(1.1);
+}
+
+/* Background images cho từng club */
+.club-bongda::before {
+  background-image: url("../images/bongda.jpg");
+}
+
+.club-vannghe::before {
+  background-image: url("../images/hat.jpg");
+}
+
+.club-bongchuyen::before {
+  background-image: url("../images/bongchuyen.jpg");
+}
+
+.club-nhay::before {
+  background-image: url("../images/nhay.jpg");
+}
+
+/* Phần nội dung ở dưới */
+.club h3,
+.club p {
+  padding: 20px;
+  margin: 0;
+  position: relative;
+}
+
+.club h3 {
+  color: #133c7a;
+  margin-top: 0;
+  transition: color 0.3s ease;
+}
+
+.club:hover h3 {
+  color: #1a4fa3;
+}
+
+/* Nút Xem thêm */
+.view-more-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #133c7a;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: transform 0.4s ease, background 0.3s ease;
+  opacity: 0;
+  z-index: 3;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(19, 60, 122, 0.3);
+}
+
+.club:hover .view-more-btn {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.view-more-btn:hover {
+  background: #1a4fa3;
+  box-shadow: 0 6px 20px rgba(19, 60, 122, 0.4);
+}
+
+/* Footer Styles */
+footer {
+  background: #133c7a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
