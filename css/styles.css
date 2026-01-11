@@ -87,15 +87,142 @@ h2 {
 }
 
 .intro {
-  text-align: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.intro p {
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #133c7a 0%, #1a4fa3 50%, #133c7a 100%);
+}
+
+.intro-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #133c7a, #1a4fa3, #133c7a);
+}
+
+.intro-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro-header h2 {
+  font-size: 2.5em;
+  color: #133c7a;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.intro-divider {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #133c7a, transparent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.intro-content {
+  position: relative;
+}
+
+.intro-icon {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 30px;
+  opacity: 0.1;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 0;
+}
+
+.intro-text {
   text-align: justify;
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 20px;
-  line-height: 1.8;
+  font-size: 1.15em;
+  line-height: 2;
+  color: #333;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.intro-highlight {
+  color: #133c7a;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.intro-text strong {
+  color: #1a4fa3;
+  font-weight: 600;
+}
+
+/* Responsive cho intro */
+@media (max-width: 768px) {
+  .intro-container {
+    padding: 35px 25px;
+  }
+
+  .intro-header h2 {
+    font-size: 2em;
+  }
+
+  .intro-text {
+    font-size: 1.05em;
+    line-height: 1.8;
+  }
+
+  .intro-icon {
+    font-size: 3em;
+    top: -10px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro {
+    padding: 40px 15px;
+  }
+
+  .intro-container {
+    padding: 30px 20px;
+  }
+
+  .intro-header h2 {
+    font-size: 1.75em;
+  }
+
+  .intro-text {
+    font-size: 1em;
+    padding: 0;
+  }
 }
 
 /* Clubs Styles */
